@@ -1,0 +1,151 @@
+/* === FAQ.css === */
+:root {
+  --ink: #0e1116;
+  --slate: #171b22;
+  --pulse-500: #ff5a54;
+  --mint-500: #29e0a9;
+  --steel: #9aa4b2;
+  --paper: #f7f9fc;
+}
+
+/* container */
+.faq {
+    border-top: 2px dashed var(--mint-500);
+    background: linear-gradient(180deg, var(--ink), var(--slate));
+    color: var(--paper);
+    padding: 5rem 1.5rem;
+    text-align: center;
+    position: relative;
+}
+
+.faq::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(600px 400px at 10% 10%, rgba(41,224,169,0.07), transparent 80%);
+    pointer-events: none;
+}
+
+/* header */
+.headline-wrapper {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+}
+
+.accent {
+    font-size: 2.3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, var(--mint-500), #7bf0d0);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    text-shadow: 0 0 28px rgba(41,224,169,.28);
+    letter-spacing: 1px;
+}
+
+.subheading__faq {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--steel);
+    margin-top: 0.5rem;
+    line-height: 1.5;
+}
+
+/* accordion container */
+.accordian-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* each detail item */
+.accordian-list {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.accordian-list[open] {
+  border-color: var(--mint-500);
+  box-shadow: 0 0 25px rgba(41,224,169,0.15);
+  background: rgba(41,224,169,0.05);
+}
+
+/* summary (the question) */
+.accordian-header {
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--paper);
+  letter-spacing: 0.4px;
+  position: relative;
+}
+
+.accordian-header::after {
+  content: "▸";
+  font-size: 1.2rem;
+  position: absolute;
+  right: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(0);
+  color: var(--mint-500);
+  transition: transform 0.3s ease;
+}
+
+details[open] > summary::after {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+/* answer text */
+.accordian-info {
+  padding: 1rem 1.25rem;
+  font-size: 0.95rem;
+  color: var(--steel);
+  line-height: 1.7;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.accordian-info em {
+  color: var(--mint-500);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.accordian-info ul {
+  margin-top: 0.5rem;
+  margin-left: 1.5rem;
+  list-style-type: square;
+  color: var(--paper);
+}
+
+/* tooltip */
+.tooltip-msg__faq {
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  color: var(--steel);
+  line-height: 1.6;
+}
+
+.tooltip-msg__faq .accent {
+  font-size: 0.9rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--pulse-500), var(--mint-500));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* responsive */
+@media (max-width: 640px) {
+  .accent {
+    font-size: 1.8rem;
+  }
+  .accordian-header {
+    font-size: 1rem;
+  }
+}

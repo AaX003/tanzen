@@ -1,0 +1,136 @@
+/* Timetable.css */
+:root{
+  --ink:#0e1116; --slate:#171b22; --paper:#f7f9fc;
+  --steel:#9aa4b2; --mint:#29e0a9; --mint-600:#1fd09b;
+}
+
+/* hero */
+.container__timetable{
+  background:
+    radial-gradient(900px 420px at 10% -10%, rgba(41,224,169,.12), transparent 60%),
+    linear-gradient(180deg, var(--ink), var(--slate));
+  color:var(--paper);
+  padding:3rem 1rem;
+}
+
+.timetable__title {
+    text-align: center;
+    font-size: 2.3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, var(--mint-500), #7bf0d0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 1px;
+}
+
+.timetable__subtitle {
+    max-width: 600px;
+    margin: 1rem auto 3rem;
+    color: var(--steel);
+    line-height: 1.6;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* timetable */
+
+.timetable-wrapper{
+  max-width:1120px; margin:1rem auto 0;
+  overflow:auto; /* enable horizontal scroll on small screens */
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.08);
+  background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  box-shadow:0 16px 36px rgba(0,0,0,.25);
+  margin-bottom: 2%;
+}
+
+/* Visually hidden but still accessible caption */
+.timetable .caption{
+  position:absolute; width:1px; height:1px; overflow:hidden;
+  clip:rect(0 0 0 0); white-space:nowrap; clip-path:inset(50%);
+}
+
+.timetable{
+  width:100%; min-width:720px;
+  border-collapse:separate; border-spacing:0;
+  font-size:0.95rem;
+}
+
+/* Sticky header row for long lists */
+.timetable thead th{
+  position:sticky; top:0; z-index:1;
+  text-align:left; font-weight:900; letter-spacing:.06em;
+  padding:.85rem .9rem;
+  background:linear-gradient(180deg, rgba(41,224,169,.16), rgba(41,224,169,.06));
+  color:var(--paper);
+  border-bottom:1px solid rgba(41,224,169,.28);
+}
+
+/* First column (time) styling */
+.timetable .col,
+.timetable .row{
+  background:linear-gradient(90deg, var(--mint), var(--mint-600));
+  color:#0c1613; font-weight:800;
+  border-right:1px solid rgba(0,0,0,.12);
+  white-space:nowrap;
+}
+.timetable .col{ width:140px; }
+
+.timetable tbody th.row{ padding:.75rem .9rem; }
+
+.timetable td{
+  padding:.9rem;
+  color:var(--paper);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  border-right:1px solid rgba(255,255,255,.06);
+  vertical-align:top;
+}
+
+/* Subtext (instructor) tone-down */
+.timetable td small{
+  display:block; margin-top:.25rem;
+  color:var(--steel); font-weight:700;
+}
+
+/* Zebra + hover highlight */
+.timetable tbody tr:nth-child(even) td{ background:rgba(255,255,255,.02); }
+.timetable tbody tr:hover td{ background:rgba(41,224,169,.05); }
+
+/* Rounded corners */
+.thead-first th:first-child{ border-top-left-radius:16px; }
+.timetable thead th:first-child{ border-top-left-radius:16px; }
+.timetable thead th:last-child{ border-top-right-radius:16px; }
+.timetable tbody tr:last-child th.row{ border-bottom-left-radius:16px; }
+.timetable tbody tr:last-child td:last-child{ border-bottom-right-radius:16px; }
+
+/* create button */
+.create-btn {
+    display: flex;
+    place-self: center;
+    justify-content: center;
+    text-decoration: none;
+    color:#0c1613;
+    background:#29e0a9;
+    width: 100%; padding: .45rem;
+    max-width: 200px;
+    border: 1px solid #29e0a9; border-radius: 10px;
+    font-weight: 500;
+    transition: box-shadow 0.4s, scaleY 0.4s;
+}
+
+/* Mobile card fallback (optional but nice) */
+@media (max-width:680px){
+  .timetable{ min-width:0; display:block; }
+  thead{ display:none; }
+  tbody{ display:grid; gap:.8rem; padding:.8rem; }
+  tbody tr{
+    display:grid; gap:.35rem;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:12px; padding:.85rem;
+    background:rgba(255,255,255,.03);
+  }
+  tbody th.row{ background:none; color:var(--paper); border:0; padding:0; }
+  tbody td{ border:0; padding:0; }
+}

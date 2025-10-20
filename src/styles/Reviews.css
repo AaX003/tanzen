@@ -1,0 +1,144 @@
+/* ========== THEME TOKENS (match your Tanzen palette) ========== */
+:root{
+  --ink: #0e1116;         /* near-black page bg */
+  --slate: #171b22;       /* card/bg panels */
+  --steel: #9aa4b2;       /* muted text */
+  --paper: #f7f9fc;       /* light text */
+  --mint-500: #29e0a9;    /* neon mint accent */
+  --mint-400: #4fe9bd;
+  --pulse-600: #ff3d36;   /* optional warm accent */
+  --glass: rgba(255,255,255,0.06);
+  --glass-stroke: rgba(255,255,255,0.12);
+  --shadow: 0 20px 40px rgba(0,0,0,.45);
+}
+
+/* ========== LAYOUT ========== */
+.container__reviews{
+  background: radial-gradient(1200px 800px at 10% 0%, rgba(41,224,169,0.06), transparent 60%),
+              radial-gradient(1000px 700px at 90% 20%, rgba(255,61,54,0.05), transparent 60%),
+              var(--ink);
+  color: var(--paper);
+  padding: clamp(40px, 7vw, 96px) 20px;
+}
+
+.hero__reviews .title__hero{
+  max-width: 960px;
+  margin: 0 auto 28px;
+  text-align: center;
+}
+
+.title__reviews{
+  font-size: clamp(28px, 4vw, 40px);
+  letter-spacing: .4px;
+  margin: 0 0 8px;
+  line-height: 1.1;
+  background: linear-gradient(135deg, var(--paper) 0%, var(--mint-500) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subtitle__reviews{
+  color: var(--steel);
+  font-size: clamp(14px, 1.8vw, 16px);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ========== CAROUSEL FRAME ========== */
+.showcase__reviews{
+  display: grid;
+  place-items: center;
+  margin-top: clamp(18px, 4vw, 36px);
+}
+
+.reviews-display{
+  width: min(820px, 100%);
+  min-height: 260px; /* keeps layout stable between quotes */
+}
+
+/* ========== CARD ========== */
+.review-card{
+  position: relative;
+  backdrop-filter: blur(10px);
+  background: linear-gradient(180deg, var(--glass), rgba(255,255,255,0.02));
+  border: 1px solid var(--glass-stroke);
+  box-shadow: var(--shadow);
+  border-radius: 18px;
+  padding: clamp(18px, 4.5vw, 28px);
+  overflow: hidden;
+
+  /* subtle appear animation every advance */
+  animation: fadeSlide .5s ease;
+}
+
+@keyframes fadeSlide{
+  from{ opacity: 0; transform: translateY(8px); }
+  to{   opacity: 1; transform: translateY(0); }
+}
+
+/* reduce motion for those who prefer it */
+@media (prefers-reduced-motion: reduce){
+  .review-card{ animation: none; }
+}
+
+/* ========== CONTENT BITS ========== */
+.review-rating{
+  display: inline-flex;
+  gap: 4px;
+  font-size: clamp(18px, 2.2vw, 22px);
+  color: var(--mint-500);
+  line-height: 1;
+}
+
+.review-quote{
+  margin: 12px 0 14px;
+  font-size: clamp(18px, 2.4vw, 22px);
+  line-height: 1.55;
+  color: var(--paper);
+  letter-spacing: .2px;
+}
+
+.review-divider{
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, var(--glass-stroke), transparent);
+  margin: 12px 0 10px;
+}
+
+.review-author{
+  font-weight: 700;
+  color: var(--paper);
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.review-locale{
+  color: var(--steel);
+}
+
+.hint{
+  position: absolute;
+  bottom: 10px;
+  right: 14px;
+  font-size: 12px;
+  color: var(--steel);
+  opacity: .8;
+}
+
+/* ========== HOVER/FOCUS FEEDBACK ========== */
+.reviews-display:hover .review-card{
+  border-color: rgba(41,224,169,0.35);
+  box-shadow: 0 24px 48px rgba(41,224,169,0.12);
+}
+
+/* ========== RESPONSIVE TWEAKS ========== */
+@media (max-width: 520px){
+  .review-card{
+    padding-bottom: 34px; /* room for the hint */
+  }
+  .hint{
+    right: 10px;
+    bottom: 8px;
+  }
+}

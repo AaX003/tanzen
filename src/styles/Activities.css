@@ -1,0 +1,91 @@
+/* ========== Activities Section (TANZEN) ========== */
+
+.container__activities {
+  background: linear-gradient(180deg, #0e1116 0%, #171b22 100%);
+  color: var(--paper);
+  padding: clamp(40px, 6vw, 96px) 20px;
+  text-align: center;
+}
+
+.activities__title {
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  background: linear-gradient(90deg, var(--mint-500), #7bf0d0);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  text-shadow: 0 0 28px rgba(41,224,169,.28);
+  margin-bottom: 12px;
+}
+
+.activities__subtitle {
+  color: var(--steel);
+  font-size: clamp(14px, 1.8vw, 16px);
+  max-width: 640px;
+  margin: 0 auto 48px;
+  line-height: 1.6;
+}
+
+/* ========== Grid Layout ========== */
+.showcase__activities {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: clamp(20px, 3vw, 40px);
+  justify-items: center;
+  align-items: start;
+}
+
+.activity-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 50%;
+  backdrop-filter: blur(8px);
+  padding: 24px 16px;
+  width: 100%;
+  max-width: 220px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+}
+
+.activity-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--mint-500);
+  box-shadow: 0 12px 32px rgba(41,224,169,0.15);
+}
+
+.activity-card img {
+  display: block;
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  margin: 0 auto 16px;
+}
+
+.activity-card .title {
+  font-size: clamp(16px, 1.8vw, 18px);
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  color: var(--paper);
+}
+
+/* Subtle pulse animation */
+.activity-card:hover img {
+  animation: pulseGlow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+  from { filter: drop-shadow(0 0 10px rgba(41,224,169,0.2)); }
+  to { filter: drop-shadow(0 0 16px rgba(255,61,54,0.4)); }
+}
+
+/* ========== Responsive Adjustments ========== */
+@media (max-width: 600px) {
+  .activity-card {
+    max-width: 180px;
+    padding: 20px 14px;
+  }
+
+  .activity-card img {
+    width: 70px;
+    height: 70px;
+  }
+}

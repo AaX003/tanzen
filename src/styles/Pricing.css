@@ -1,0 +1,77 @@
+:root{
+  --ink:#0e1116; --slate:#171b22; 
+  --pulse-500:#ff5a54; --mint-500:#29e0a9;
+  --steel:#9aa4b2; --paper:#f7f9fc;
+}
+
+.container__pricing{
+  background: linear-gradient(180deg, var(--ink), var(--slate));
+  color: var(--paper);
+  padding: 4rem 1.25rem;
+}
+
+.title__pricing {
+  font-size:2.2rem; font-weight:900; text-align:center;
+  background: linear-gradient(90deg, var(--mint-500), #7bf0d0);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  text-shadow: 0 0 28px rgba(41,224,169,.28);
+}
+.subtitle__pricing{
+  text-align:center; color:var(--steel); margin-top:.5rem;
+}
+
+.pricing-grid{
+  max-width:1100px; margin:2.5rem auto 0;
+  display:grid; gap:1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.pricing-card{
+  position:relative;
+  background: rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:14px;
+  padding:1.25rem;
+  transition:transform .2s ease, box-shadow .25s ease, border-color .2s ease;
+}
+.pricing-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0,0,0,.35);
+  border-color: rgba(255,255,255,0.18);
+}
+
+.pricing-card.is-popular{
+  border-color: var(--mint-500);
+  box-shadow: 0 0 28px rgba(41,224,169,.18);
+}
+.badge{
+  position:absolute; top:12px; right:12px;
+  background: linear-gradient(90deg, var(--mint-500), #7bf0d0);
+  color:#0e1116; font-weight:800; font-size:.7rem;
+  padding:.3rem .6rem; border-radius:999px;
+}
+
+.plan-title{ font-size:1.25rem; font-weight:800; margin:0; }
+.plan-price{ font-size:1.8rem; font-weight:900; margin:.25rem 0; }
+.plan-hint{ color:var(--steel); }
+
+.benefit-list{ margin:1rem 0 1.25rem; padding-left:1.1rem; }
+.benefit-item{
+  margin:.35rem 0; color:var(--paper);
+  list-style: none; position: relative; padding-left:1.1rem;
+}
+.benefit-item::before{
+  content:""; position:absolute; left:0; top:.55rem;
+  width:8px; height:8px; border-radius:2px;
+  background: linear-gradient(90deg, var(--mint-500), #7bf0d0);
+  box-shadow: 0 0 8px rgba(41,224,169,.6);
+}
+
+.check-it-out-btn{
+  display:inline-block; width:100%; text-align:center;
+  padding:.75rem 1rem; border-radius:12px; font-weight:800;
+  color:#0e1116; background: linear-gradient(90deg, var(--mint-500), #7bf0d0);
+  box-shadow: 0 12px 22px rgba(41,224,169,.18);
+  transition: transform .15s ease, box-shadow .2s ease;
+}
+.check-it-out-btn:hover{ transform: translateY(-1px); box-shadow: 0 16px 28px rgba(41,224,169,.28); }

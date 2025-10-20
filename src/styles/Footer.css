@@ -1,0 +1,133 @@
+/* ========== FOOTER (TANZEN) ========== */
+
+.container__footer {
+  background: linear-gradient(180deg, #0e1116 0%, #171b22 100%);
+  color: var(--paper);
+  padding: clamp(48px, 8vw, 96px) 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ========== HEADER SECTION ========== */
+.footer-hero {
+  text-align: center;
+  margin-bottom: clamp(40px, 6vw, 72px);
+}
+
+.title__footer {
+  font-size: clamp(28px, 3.5vw, 38px);
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, var(--mint-500), #7bf0d0);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  text-shadow: 0 0 28px rgba(41,224,169,.28);
+}
+
+/* ========== SOCIAL LINKS ========== */
+.social-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 18px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.social-tag a {
+  color: var(--steel);
+  font-size: 22px;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.social-tag a:hover {
+  color: var(--mint-500);
+  transform: translateY(-4px);
+}
+
+/* ========== NAV GRID ========== */
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(24px, 4vw, 48px);
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: clamp(24px, 3vw, 48px);
+  width: 100%;
+  max-width: 1000px;
+  justify-content: center;
+}
+
+.nav-links-title {
+    list-style: none; margin-bottom: 12px;
+}
+
+.nav-link-title {
+  color: var(--mint-500);
+  font-size: clamp(14px, 1.6vw, 16px);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.nav-link {
+  list-style: none;
+  margin: 6px 0;
+}
+
+.nav-link a {
+  color: var(--paper);
+  text-decoration: none;
+  font-size: clamp(13px, 1.5vw, 15px);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link a:hover {
+  color: var(--mint-500);
+  transform: translateX(3px);
+}
+
+/* ========== FOOTER HINT (CUSTOMER HOURS) ========== */
+.hint-container {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--steel);
+  font-size: clamp(12px, 1.5vw, 14px);
+  opacity: 0.8;
+}
+
+/* ========== DIVIDER LINE ========== */
+.footer-divider {
+  height: 1px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 24px auto;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+}
+
+/* ========== COPYRIGHT ========== */
+.add-content {
+  text-align: center;
+}
+
+.rights-reserved-msg {
+  color: var(--steel);
+  font-size: clamp(12px, 1.5vw, 14px);
+  letter-spacing: 0.3px;
+}
+
+/* ========== RESPONSIVE ADJUSTMENTS ========== */
+@media (max-width: 640px) {
+  .main-content {
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+  }
+
+  .hint-container {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+}
