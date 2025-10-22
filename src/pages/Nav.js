@@ -14,12 +14,12 @@ function Navbar() {
                     TANZEN
                 </h3>
                 <div className="links__navbar">
-                    <a href="highlights">Highlights</a>
-                    <a href="coaches">Coaches</a>
-                    <a href="pricing">Pricing</a>
-                    <a href="timetable">Timetable</a>
-                    <a href="faq">FAQ</a>
-                    <a href="reviews">Reviews</a>
+                    <a href="#highlights">Highlights</a>
+                    <a href="#coaches">Coaches</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#timetable">Timetable</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="#reviews">Reviews</a>
                 </div>
                 <button 
                     id="menu-btn"
@@ -29,10 +29,12 @@ function Navbar() {
                     <RxHamburgerMenu />
                 </button>
                 <div id="supple-links__nav" className={`supple-links ${menuOpen ? "is-open" : ""}`} aria-hidden={!menuOpen}>
-                    <a href="#search" >Search</a>
-                    <a href="#videos" >Videos</a>
-                    <a href="#exercises">Exercise Routines</a>
-                    <a href="#diets">Diets</a>
+                    <a href="#highlights">Highlights</a>
+                    <a href="#coaches">Coaches</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#timetable">Timetable</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="#reviews">Reviews</a>
                 </div>
             </header>
         </div>

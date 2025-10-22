@@ -1,4 +1,3 @@
-
 // COMPONENTS
 import Navbar from "./Nav";
 import Home from "./Home";
@@ -15,17 +14,44 @@ function Main() {
     return (
         <div className="container">
             <Navbar />
-            <Home />
-            <Highlights />
-            <Timetable />
-            <Coaches />
-            <Pricing />
-            <Reviews />
-            <Activities />
-            <FAQ />
-            <Footer />
+
+            <section id="home">
+                <Home />
+            </section>
+
+            <section id="highlights">
+                <Highlights />
+            </section>
+
+            <section id="timetable">
+                <Timetable />
+            </section>
+
+            <section id="coaches">
+                <Coaches />
+            </section>
+
+            <section id="pricing">
+                <Pricing />
+            </section>
+
+            <section id="reviews">
+                <Reviews />
+            </section>
+
+            <section id="activities">
+                <Activities />
+            </section>
+
+            <section id="faq">
+                <FAQ />
+            </section>
+
+            <footer id="footer">
+                <Footer />
+            </footer>
         </div>
     );
 }
 
-export default Main
+export default Main;
