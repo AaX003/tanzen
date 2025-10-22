@@ -65,12 +65,6 @@ function Timetable() {
                 </tbody>
                </table>
             </div>
-              <a 
-                href="#!"
-                className="create-btn"
-                >
-                Create Schedule
-            </a>
         </div>
     );
 }

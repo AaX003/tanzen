@@ -6,7 +6,7 @@
   --paper: #f7f9fc;       /* light text */
   --mint-500: #29e0a9;    /* neon mint accent */
   --mint-400: #4fe9bd;
-  --pulse-600: #ff3d36;   /* optional warm accent */
+  --pulse-600: #ff3d36;   /* warm accent */
   --glass: rgba(255,255,255,0.06);
   --glass-stroke: rgba(255,255,255,0.12);
   --shadow: 0 20px 40px rgba(0,0,0,.45);
@@ -67,8 +67,6 @@
   border-radius: 18px;
   padding: clamp(18px, 4.5vw, 28px);
   overflow: hidden;
-
-  /* subtle appear animation every advance */
   animation: fadeSlide .5s ease;
 }
 
@@ -77,7 +75,7 @@
   to{   opacity: 1; transform: translateY(0); }
 }
 
-/* reduce motion for those who prefer it */
+/* reduce motion */
 @media (prefers-reduced-motion: reduce){
   .review-card{ animation: none; }
 }

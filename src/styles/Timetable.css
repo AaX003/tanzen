@@ -38,7 +38,7 @@
 
 .timetable-wrapper{
   max-width:1120px; margin:1rem auto 0;
-  overflow:auto; /* enable horizontal scroll on small screens */
+  overflow:auto;
   border-radius:16px;
   border:1px solid rgba(255,255,255,.08);
   background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
@@ -46,7 +46,7 @@
   margin-bottom: 2%;
 }
 
-/* Visually hidden but still accessible caption */
+/* Visually hidden / accessible caption */
 .timetable .caption{
   position:absolute; width:1px; height:1px; overflow:hidden;
   clip:rect(0 0 0 0); white-space:nowrap; clip-path:inset(50%);
@@ -105,22 +105,8 @@
 .timetable tbody tr:last-child th.row{ border-bottom-left-radius:16px; }
 .timetable tbody tr:last-child td:last-child{ border-bottom-right-radius:16px; }
 
-/* create button */
-.create-btn {
-    display: flex;
-    place-self: center;
-    justify-content: center;
-    text-decoration: none;
-    color:#0c1613;
-    background:#29e0a9;
-    width: 100%; padding: .45rem;
-    max-width: 200px;
-    border: 1px solid #29e0a9; border-radius: 10px;
-    font-weight: 500;
-    transition: box-shadow 0.4s, scaleY 0.4s;
-}
 
-/* Mobile card fallback (optional but nice) */
+/* Mobile */
 @media (max-width:680px){
   .timetable{ min-width:0; display:block; }
   thead{ display:none; }
